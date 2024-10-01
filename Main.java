@@ -1,5 +1,5 @@
 import aulas.*;
-
+import trabalhos.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Só fé");
@@ -10,7 +10,9 @@ public class Main {
         //aula25.aula();
         //aula27.aula();
         //aula28.aula();
-        aula30.aula();
-
+        //aula30.aula();
+        //aula31.aula();
+        Bim2R2.testesPotenciaRec();
+    
     }
 }
