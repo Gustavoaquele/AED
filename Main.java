@@ -12,7 +12,8 @@ public class Main {
         //aula28.aula();
         //aula30.aula();
         //aula31.aula();
-        Bim2R2.testesPotenciaRec();
+        Bim3T1.filtrarMenores(1,0);
+
     
     }
 }
