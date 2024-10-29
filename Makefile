@@ -1,7 +1,6 @@
 all: build run
 
 build:
-	javac -d bin trabalhos/Bim2R2.java
 	javac -d bin Main.java
 	javac -d bin aulas/aula*.java
 	javac -d bin libs/*

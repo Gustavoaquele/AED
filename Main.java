@@ -12,7 +12,7 @@ public class Main {
         //aula28.aula();
         //aula30.aula();
         //aula31.aula();
-        Bim3T1.filtrarMenores(1,0);
+        aula33.ex03();
 
     
     }
