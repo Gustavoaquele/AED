@@ -1,0 +1,7 @@
+make: Entering directory '/home/aluno/aed'
+javac -d bin Main.java
+javac -d bin aulas/aula*.java
+javac -d bin libs/*
+java -cp bin Main
+make: Leaving directory '/home/aluno/aed'
+ 
