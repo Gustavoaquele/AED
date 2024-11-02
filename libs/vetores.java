@@ -1,6 +1,7 @@
 package libs;
 
 import java.util.Random;
+import java.util.Arrays;
 
 public class vetores {
     public static int[] alocarInteiros(int n) {
@@ -61,5 +62,43 @@ public static int[] gerarValoresAleatorios(int n, int valor_min, int valor_max) 
         
         return vetor;
     }
+  
 
+
+public static int[] gerarValoresAleatoriosOrdenado(int n, int valor_min, int valor_max) {
+
+        //Obtém um vetor de valores aleatórios
+        int[] vetor = gerarValoresAleatorios(n, valor_min, valor_max);
+
+        // Ordena o vetor antes de retornar
+        Arrays.sort(vetor);
+
+        return vetor;
+    }
+
+    public static int BuscaBinaria(int[]vetor, int valor_buscar){
+        int ini,fim,meio;
+
+        ini = 0;
+        fim = vetor.length;
+
+        while (ini <= fim){
+            meio =(int)(ini+fim)/2;
+            if(vetor[meio]== valor_buscar){
+                return meio;
+            }else{
+                if (valor_buscar<vetor[meio]){
+                    fim = meio-1;
+                }else if(valor_buscar>vetor[meio]){
+                    ini = meio+1;
+                }
+            }
+
+        }
+
+
+
+        return -1;
+
+}
 }
