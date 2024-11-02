@@ -13,7 +13,7 @@ public class Main {
         //aula30.aula();
         //aula31.aula();
         //aula33.ex03();
-        aula34.ex01();
+        aula34.ex02();
 
 
     
