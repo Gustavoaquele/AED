@@ -6,12 +6,12 @@ import libs.vetores;
 
 public class aula34 {
         public static void aula() {
-            System.out.println("Aula do dia 29/10 - Registros");
+            System.out.println("Aula do dia 1/11 - Busca Sequencial e Binaria");
     
             //ex01(); gera valores aleatorios e busca a posição 
             //ex02(); mesma coisa mas mede o tempo em seg
             //ex03(); mesma coisa com um for
-            ex04(); //Busca binaria 
+            ex04(); //mesma coisa com vetor ordenado
         }  
 
 
@@ -44,7 +44,7 @@ public class aula34 {
            }else{
             System.out.println("Valor "+x+" não encontrado");
            }
-           System.out.println("Encontrado em "+tempo_segundos+" segundos");
+           System.out.println("Tempo gasto: "+tempo_segundos+" segundos");
 
         }
 
@@ -63,19 +63,19 @@ public class aula34 {
            }else{
             System.out.println("Valor "+x+" não encontrado");
            }
-           System.out.println("Encontrado em "+tempo_segundos+" segundos");
+           System.out.println("Tempo gasto: "+tempo_segundos+" segundos");
            System.out.println(" ");
         }
         }
 
         public static void ex04(){
             for (int i =0;i<=10;i++){
-            int[] v = vetores.gerarValoresAleatoriosOrdenado(100000, 0, 100000);
-            int x = 5000;
+            int[] v = vetores.gerarValoresAleatoriosOrdenado(100000000, 0, 100000000);
+            int x = -1;
 
            
             long tempo_inicio = tempo.medirTempoIniciar();
-           int pos = libs.vetores.BuscaBinaria(v,x);
+           int pos = libs.vetores.BuscaSequencial(v,x);
            double tempo_segundos = tempo.medirTempoFinalizarSegundos(tempo_inicio);
 
            if (pos != -1){
@@ -83,7 +83,7 @@ public class aula34 {
            }else{
             System.out.println("Valor "+x+" não encontrado");
            }
-           System.out.println("Encontrado em "+tempo_segundos+" segundos");
+           System.out.println("Tempo gasto: "+tempo_segundos+" segundos");
            System.out.println(" ");
         }
         }
