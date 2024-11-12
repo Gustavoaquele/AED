@@ -5,10 +5,10 @@ import libs.vetores;
 
 public class aula27 {
     public static void aula() {
-      int[]a=vetores.alocarInteiros(3);
-      a[3]=3;
-        
-    saida.mostrarVetor(obterIndices(a,3),'0');
+        int[] a = vetores.alocarInteiros(3);
+        a[3] = 3;
+
+        saida.mostrarVetor(obterIndices(a, 3), '0');
     }
 
     public static int obterPosicao(int[] vetor, int valor_buscar, int pos_inicial) {
@@ -60,25 +60,25 @@ public class aula27 {
             if (vetor[i].equals(valor_buscar)) {
                 return i;
             }
-        }  
+        }
         ;
         return -1;
 
     }
 
-    public static int[] obterIndices(int[] v, int valor_buscar){
-        int [] indices;
+    public static int[] obterIndices(int[] v, int valor_buscar) {
+        int[] indices;
         int contador = 0;
-        for(int i=0;i< v.length;i++){
-            if (v[i]== valor_buscar) {
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] == valor_buscar) {
                 contador++;
-                
+
             }
         }
-        indices= new int[contador];
-        for(int j=0;j<=contador;j++){
-            indices[j-1]=obterPosicao(v, valor_buscar, j);
+        indices = new int[contador];
+        for (int j = 0; j <= contador; j++) {
+            indices[j - 1] = obterPosicao(v, valor_buscar, j);
         }
-return indices;
+        return indices;
     }
 }

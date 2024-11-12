@@ -20,7 +20,7 @@ public class aula36 {
         System.out.println("Aula do dia 8/11 - Lista");
         // ex01();
         // e x02();
-         ex03();
+        ex03();
         // ex04();
     }
 
@@ -109,18 +109,19 @@ public class aula36 {
             System.out.println(l.next());
         }
     }
-    public static void ex03(){
+
+    public static void ex03() {
         Set<Integer> conjunto = new HashSet<>();
-        
+
         conjunto.add(10);
         conjunto.add(20);
         conjunto.add(30);
         conjunto.add(40);
-        
-        for(int y : conjunto){
+
+        for (int y : conjunto) {
             System.out.println(y);
         }
-        
+
         System.out.printf("Elemento 30 está no conjunto? %b\n", conjunto.contains(30));
         System.out.printf("Elemento 30 está no conjunto? %b\n", conjunto.contains(70));
     }
