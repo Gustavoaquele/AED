@@ -40,14 +40,50 @@ public class aula37 {
     }
 
     public static void ex02(){
-        String msg = "hoje e um dia apos ontem hoje tambem e um dia antes de amanhã";
+        String msg = "hoje e um dia apos ontem hoje tambem e um dia antes de amanha hoje nao e ontem nem amanha";
         String[] palavras = msg.split(" ");
+        String palavra;
+        int i,n;
+
+        // for(i=0;i<palavras.length;i++){
+        //     System.out.println(palavras[i]);
+        // }
+    
+
+    Hashtable<String, Integer> contador = new Hashtable<>();
+
+    for(i=0;i<palavras.length;i++){
+        palavra = palavras[i];
+
+        if (contador.containsKey(palavra)){
+            n = contador.get(palavra);
+            System.out.println(n);
+            contador.put(palavra, contador.get(palavra)+1);
+        }else{
+            contador.put(palavra, 1);
+        }
+    }
+    for (String posicao : contador.keySet()) {
+        System.out.printf("[%s]\t%d\n", posicao, contador.get(posicao));
+    }
+
+    }
+
+    public static void ex03(){
+        System.out.println("Vetor esparso");
+
+        int[] vetor = {0,0,0,0,0,0,0,0,0,50,60,0,0,0,0,0,0,0,0,0,0,0,0,20};
         int i;
 
-        for(i=0;i<palavras.length;i++){
-            System.out.println(palavras[i]);
+        Hashtable<String, Integer> vetor_esparso = new Hashtable<>();
+
+        for(i=0;i<vetor.length;i++){
+            if(vetor[i]!=0){
+                vetor_esparso.put(i, vetor[i]);
+            }
         }
     }
 
-}
+    }
+
    
