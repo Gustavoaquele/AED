@@ -30,8 +30,9 @@ public class aula38 {
     int i,j;
         vetores.ordenarInsertionSort(v_0);
         for(i=0;i<v_0.length;i++){
-            System.out.print("["+v_0[i]+"] , ");
+            System.out.print("["+v_0[i]+" , ");
         }
+        System.out.print("]");
 
            
     }
