@@ -136,6 +136,35 @@ public static void ordenarSelectionSort(int[] v){
         }
     }
 
+    public static int[] ordenarMergeSort(int[]va, int[]vb){
+        int i=0,j=0,k=0;
+        int vc[] = new int [va.length+vb.length];
+
+        while(i<va.length && j<vb.length){
+            if(va[i]<vb[j]){
+                vc[k]=va[i];
+                i++;
+            }else{
+                vc[k]=vb[j];
+                j++;
+            }
+            k++;
+            }
+            while(i<va.length){
+                vc[k]=va[i];
+                i++;
+                k++;
+            }
+            while(j<vb.length){
+                vc[k]=vb[j];
+                j++;
+                k++;
+            }
+            mostrar(vc);
+            return vc;
+
+    }
+
     public static void mostrar(int[]v){
         int i;
         System.out.print("[");

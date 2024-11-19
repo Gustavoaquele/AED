@@ -20,8 +20,8 @@ public class aula38 {
     public static void aula() {
         System.out.println("Aula do dia 19/11 - Ordenação InsertionSort e SelectionSort");
         // ex01();
-        ex02();
-        // ex03();
+        //ex02();
+         ex03();
         // ex04();
     }
 
@@ -45,5 +45,10 @@ public class aula38 {
         vetores.mostrar(v_0);
 
     }
+    public static void ex03(){
+        int[] va={0,2,4,7,8,15};
+        int[] vb={1,3,5,10};
 
-}
+        vetores.ordenarMergeSort(va, vb);
+        }
+    }
