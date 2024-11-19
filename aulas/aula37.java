@@ -69,21 +69,19 @@ public class aula37 {
 
     }
 
-    public static void ex03(){
-        System.out.println("Vetor esparso");
+    // public static void ex03(){
+    //     System.out.println("Vetor esparso");
 
-        int[] vetor = {0,0,0,0,0,0,0,0,0,50,60,0,0,0,0,0,0,0,0,0,0,0,0,20};
-        int i;
+    //     int[] vetor = {0,0,0,0,0,0,0,0,0,50,60,0,0,0,0,0,0,0,0,0,0,0,0,20};
+    //     int i;
 
-        Hashtable<String, Integer> vetor_esparso = new Hashtable<>();
+    //     Hashtable<String, Integer> vetor_esparso = new Hashtable<>();
 
-        for(i=0;i<vetor.length;i++){
-            if(vetor[i]!=0){
-                vetor_esparso.put(i, vetor[i]);
-            }
-        }
-    }
-
-    }
+    //     for(i=0;i<vetor.length;i++){
+    //         if(vetor[i]!=0){
+    //             vetor_esparso.put(i, vetor[i]);
+    //         }
+   }
+    
 
    

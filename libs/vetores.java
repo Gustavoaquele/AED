@@ -101,4 +101,23 @@ public static int[] gerarValoresAleatoriosOrdenado(int n, int valor_min, int val
         return -1;
 
 }
+
+public static void trocar(int[]v,int i, int j){
+int tmp;
+tmp= v[i];
+v[i]=v[j];
+v[j]=tmp;
+
+}
+
+public static void ordenarInsertionSort(int[] v){
+    int i,j;
+    for(i=1;i<v.length;i++){
+        j=i;
+        while(j>0 && v[j]<v[j-1]){
+            trocar(v,j,j-1);
+            j--;
+        }
+    }
+}
 }
