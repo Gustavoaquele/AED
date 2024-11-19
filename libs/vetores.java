@@ -135,5 +135,17 @@ public static void ordenarSelectionSort(int[] v){
             trocar(v,i,menor_pos);
         }
     }
+
+    public static void mostrar(int[]v){
+        int i;
+        System.out.print("[");
+        for(i=0;i<v.length;i++){
+            System.out.print(+v[i]+" ");
+        }
+        System.out.print("]");
+
+    }
 }
+
+
 
