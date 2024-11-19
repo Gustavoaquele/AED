@@ -120,4 +120,20 @@ public static void ordenarInsertionSort(int[] v){
         }
     }
 }
+
+public static void ordenarSelectionSort(int[] v){
+    int i,j,menor_val,menor_pos;
+    for(i=0;i<v.length-1;i++){
+        menor_val=v[i];
+        menor_pos=i;
+        for(j=i+1;j<v.length;j++){
+            if(v[j]<menor_val){
+                menor_val=v[j];
+                menor_pos=j;
+            }
+        }
+            trocar(v,i,menor_pos);
+        }
+    }
 }
+
