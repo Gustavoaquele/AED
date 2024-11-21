@@ -165,7 +165,7 @@ public static void ordenarSelectionSort(int[] v){
 
     }
 
-    public static void mostrar(int[]v){
+    public static void mostrarVetor(int[]v){
         int i;
         System.out.print("[");
         for(i=0;i<v.length;i++){
