@@ -42,7 +42,7 @@ public class aula38 {
         System.out.println("## Selection Sort ##");
         int[] v_0 = { 17, 5, 0, 18, 2, 9 };
         vetores.ordenarSelectionSort(v_0);
-        vetores.mostrar(v_0);
+        vetores.mostrarVetor(v_0);
 
     }
     public static void ex03(){

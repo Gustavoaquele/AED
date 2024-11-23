@@ -82,4 +82,31 @@ public class T3 {
         }
         return vetor;
     }
+
+    public static int[][] trianguloDePascal(int n) {
+        int[][] matriz = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            matriz[i] = new int[i + 1];
+
+            matriz[i][0] = 1;
+            matriz[i][i] = 1;
+
+            for (int j = 1; j < i; j++) {
+                matriz[i][j] = matriz[i - 1][j - 1] + matriz[i - 1][j];
+            }
+        }
+        return matriz;
+
+    }
+
+    public static int[][] matrizPermutacaoLinhas(int[][] matriz, int x, int y) {
+
+        int[] mat = matriz[x];
+        matriz[x] = matriz[y];
+        matriz[y] = mat;
+
+        return matriz;
+    }
+
 }
