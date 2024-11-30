@@ -169,25 +169,24 @@ public class vetores {
         return sub_vetor;
     }
 
-    public static int[] mergeSort(int[] v){
-        int[] ve_ordenado,vd_ordenado,v_ordenado;
+    public static int[] mergeSort(int[] v) {
+        int[] ve_ordenado, vd_ordenado, v_ordenado;
 
-        if(v.length <= 1){
+        if (v.length <= 1) {
             return v;
         }
-
 
         int[] v_esq, v_dir;
         int meio;
 
-        meio = v.length/2;
+        meio = v.length / 2;
         v_esq = subVetor(v, 0, meio);
-        v_dir = subVetor(v,meio, v.length);
+        v_dir = subVetor(v, meio, v.length);
 
-        ve_ordenado=mergeSort(v_esq);
-        vd_ordenado=mergeSort(v_dir);
+        ve_ordenado = mergeSort(v_esq);
+        vd_ordenado = mergeSort(v_dir);
 
-        v_ordenado = ordenarMergeSort(ve_ordenado,vd_ordenado);
+        v_ordenado = ordenarMergeSort(ve_ordenado, vd_ordenado);
 
         return v_ordenado;
     }
@@ -195,33 +194,37 @@ public class vetores {
     public static void mostrarVetor(int[] v) {
         int i;
         System.out.print("[");
-        for (i = 0; i < v.length -1; i++) {
+        for (i = 0; i < v.length - 1; i++) {
             System.out.print(+v[i] + " ");
         }
         System.out.println("]");
 
     }
 
-    public static int[] countingSort(int[] v){
+    public static int[] countingSort(int[] v) {
         int[] contadores = new int[10];
         int[] contadores_acumulado = new int[10];
-        int[] resultado = new int [v.length];
-        
+        int[] resultado = new int[v.length];
+
         int i;
 
-        for(i = 0;i<v.length;i++){
+        for (i = 0; i < v.length; i++) {
             contadores[v[i]]++;
         }
 
-        for(i=1;i<contadores.length;i++){
-             contadores_acumulado[i] = contadores[i-1]+contadores_acumulado[i-1];                   
+        for (i = 1; i < contadores.length; i++) {
+            contadores_acumulado[i] = contadores[i - 1] + contadores_acumulado[i - 1];
         }
 
-        for(i=0;i<v.length;i++){
-            resultado[contadores_acumulado[v[i]]]=v[i];
+        for (i = 0; i < v.length; i++) {
+            resultado[contadores_acumulado[v[i]]] = v[i];
             contadores_acumulado[v[i]]++;
         }
 
-        return resultado; 
-       }
+        return resultado;
+    }
+
+    public static int obterValorPos(int x, int k) {
+        return (x % matematica.potencia(10, k) / matematica.potencia(10, k - 1));
+    }
 }

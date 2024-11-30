@@ -42,4 +42,22 @@ public class aula40 {
         System.out.println("-------");
         
     }
+
+    public static void ex02() {
+        System.out.println("Radix Sort (dois digitos)");
+        int meio;
+
+        int[] v_0 = { 27, 19, 21, 12, 92, 71, 05};
+        System.out.println("Entrada: ");
+        vetores.mostrarVetor(v_0);
+
+        System.out.println("-------");
+
+        int[] v_0_ordenado = vetores.countingSort(v_0);
+        System.out.println("Saída: ");
+        vetores.mostrarVetor(v_0_ordenado);
+
+        System.out.println("-------");
+        
+    }
 }

@@ -2,6 +2,15 @@ package libs;
 
 public class matematica {
 
+    public static int potencia(int x, int y){
+        int i;
+        int k=x;
+        for(i=0;i<y;i++){
+            k=k*x;
+        }
+        return k;
+    }
+
     public static int menor(int a, int b) {
         if (a > b) {
             return b;
