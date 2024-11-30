@@ -2,9 +2,17 @@ package libs;
 
 public class matematica {
 
+
+    public static int obterValorPos(int x, int k) {
+        return (x % potencia(10, k)) / potencia(10, k - 1);
+    }
+
     public static int potencia(int x, int y){
         int i;
         int k=x;
+        if(y==0){
+            return 1;
+        }
         for(i=0;i<y;i++){
             k=k*x;
         }

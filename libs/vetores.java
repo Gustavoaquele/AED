@@ -224,7 +224,5 @@ public class vetores {
         return resultado;
     }
 
-    public static int obterValorPos(int x, int k) {
-        return (x % matematica.potencia(10, k) / matematica.potencia(10, k - 1));
-    }
+    
 }
