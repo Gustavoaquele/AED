@@ -201,4 +201,27 @@ public class vetores {
         System.out.println("]");
 
     }
+
+    public static int[] countingSort(int[] v){
+        int[] contadores = new int[10];
+        int[] contadores_acumulado = new int[10];
+        int[] resultado = new int [v.length];
+        
+        int i;
+
+        for(i = 0;i<v.length;i++){
+            contadores[v[i]]++;
+        }
+
+        for(i=1;i<contadores.length;i++){
+             contadores_acumulado[i] = contadores[i-1]+contadores_acumulado[i-1];                   
+        }
+
+        for(i=0;i<v.length;i++){
+            resultado[contadores_acumulado[v[i]]]=v[i];
+            contadores_acumulado[v[i]]++;
+        }
+
+        return resultado; 
+       }
 }
