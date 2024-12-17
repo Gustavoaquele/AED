@@ -102,6 +102,18 @@ public class vetores {
 
     }
 
+    public static void bubbleSort(int[] v) {
+        int i, j, n;
+        n = v.length;
+        for (i = 0; i < n; i++) { // percorre de 0 até n-1 (n-1 vezes)
+            for (j = 1; j < n - i; j++) { // percorre de 1 até n-i
+                if (v[j] < v[j - 1]) { // verifica se o elem. em j é menor que o elem. em j-1
+                    trocar(v, j, j - 1); // caso seja menor, troca os elementos
+                }
+            }
+        }
+    }
+
     public static void ordenarInsertionSort(int[] v) {
         int i, j;
         for (i = 1; i < v.length; i++) {
@@ -202,27 +214,107 @@ public class vetores {
     }
 
     public static int[] countingSort(int[] v) {
-        int[] contadores = new int[10];
-        int[] contadores_acumulado = new int[10];
-        int[] resultado = new int[v.length];
+        int[] contadores = new int[10]; // Array de frequências
+        int[] contadores_acumulado = new int[10]; // Frequência acumulada
+        int[] resultado = new int[v.length]; // Resultado ordenado
 
         int i;
 
+        // 1. Conta as ocorrências de cada elemento
         for (i = 0; i < v.length; i++) {
             contadores[v[i]]++;
         }
 
+        // 2. Calcula as frequências acumuladas
+        contadores_acumulado[0] = contadores[0];
         for (i = 1; i < contadores.length; i++) {
-            contadores_acumulado[i] = contadores[i - 1] + contadores_acumulado[i - 1];
+            contadores_acumulado[i] = contadores[i] + contadores_acumulado[i - 1];
         }
 
-        for (i = 0; i < v.length; i++) {
-            resultado[contadores_acumulado[v[i]]] = v[i];
-            contadores_acumulado[v[i]]++;
+        // 3. Ordena o vetor
+        for (i = v.length - 1; i >= 0; i--) { // Deve percorrer de trás para frente
+            int valor = v[i];
+            int posicao = contadores_acumulado[valor] - 1; // Posição correta do elemento
+            resultado[posicao] = valor;
+            contadores_acumulado[valor]--; // Decrementa a frequência acumulada
         }
 
         return resultado;
     }
 
+    public static void quickSort(int[] v) {
+        quickSort_(v, 0, v.length - 1);
+    }
     
+    public static void quickSort_(int[] v, int ini, int fim) {
+        if (ini < fim) { // Verifica se o intervalo é válido
+            int pos_pivot = quickSortPart(v, ini, fim); // Particiona e encontra o pivô
+            quickSort_(v, ini, pos_pivot - 1); // Recursão para a parte esquerda
+            quickSort_(v, pos_pivot + 1, fim); // Recursão para a parte direita
+        }
+    }
+    
+    public static int quickSortPart(int[] v, int ini, int fim) {
+        int pivot = v[fim]; // Escolhe o último elemento como pivô
+        int i = ini - 1; // Índice do menor elemento
+    
+        for (int j = ini; j < fim; j++) {
+            if (v[j] <= pivot) { // Se o elemento for menor ou igual ao pivô
+                i++;
+                // Troca os elementos v[i] e v[j]
+                int temp = v[i];
+                v[i] = v[j];
+                v[j] = temp;
+            }
+        }
+    
+        // Coloca o pivô na posição correta
+        int temp = v[i + 1];
+        v[i + 1] = v[fim];
+        v[fim] = temp;
+    
+        return i + 1; // Retorna a posição do pivô
+    }
+
+    public static void radixSort(int[] v) {
+        int max = pegarMax(v);
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countSort(v, exp);
+        }
+    }
+
+    private static int pegarMax(int[] v) {
+        int max = v[0];
+        for (int i = 1; i < v.length; i++) {
+            if (v[i] > max) {
+                max = v[i];
+            }
+        }
+        return max;
+    }
+
+    private static void countSort(int[] v, int exp) {
+        int n = v.length;
+        int[] saida = new int[n];
+        int[] contador = new int[10];
+
+        for (int i = 0; i < n; i++) {
+            contador[(v[i] / exp) % 10]++;
+        }
+
+        for (int i = 1; i < 10; i++) {
+            contador[i] += contador[i - 1];
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            saida[contador[(v[i] / exp) % 10] - 1] = v[i];
+            contador[(v[i] / exp) % 10]--;
+        }
+
+        for (int i = 0; i < n; i++) {
+            v[i] = saida[i];
+        }
+    }
+    
+
 }

@@ -1,7 +1,7 @@
 import aulas.*;
+import trabalhos.*;
 import libs.matematica;
 import libs.vetores;
-import trabalhos.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,12 +16,14 @@ public class Main {
         // aula30.aula();
         // aula31.aula();
         // aula33.ex03();
-        System.out.println(matematica.obterValorPos(129, 1));
-        System.out.println(matematica.obterValorPos(129, 2));
-        System.out.println(matematica.obterValorPos(129, 3));
-        System.out.println(matematica.obterValorPos(129, 4));
-        //aula40.aula();
-        
+        // aula38.ex04();
+        // aula40.aula();
+        Trab4.ex7();
+        // Trab4.ex2();
+        // Trab4.ex1();
+        // Trab4.ex3();
+
+        // Trab4.ex6();
 
     }
 }

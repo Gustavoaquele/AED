@@ -20,9 +20,9 @@ public class aula38 {
     public static void aula() {
         System.out.println("Aula do dia 19/11 - Ordenação InsertionSort e SelectionSort");
         // ex01();
-        //ex02();
-         ex03();
-        // ex04();
+        // ex02();
+        // ex03();
+        ex04();
     }
 
     public static void ex01() {
@@ -45,10 +45,19 @@ public class aula38 {
         vetores.mostrarVetor(v_0);
 
     }
-    public static void ex03(){
-        int[] va={0,2,4,7,8,15};
-        int[] vb={1,3,5,10};
+
+    public static void ex03() {
+        int[] va = { 0, 2, 4, 7, 8, 15 };
+        int[] vb = { 1, 3, 5, 10 };
 
         vetores.ordenarMergeSort(va, vb);
-        }
     }
+
+    public static void ex04() {
+        System.out.println("## Bubble Sort ##");
+        int[] v_0 = { 17, 5, 0, 18, 2, 9 };
+        vetores.bubbleSort(v_0);
+        vetores.mostrarVetor(v_0);
+
+    }
+}
